@@ -3,326 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BlockCoach — 1-on-1 Minecraft Coaching</title>
-  <meta name="description" content="1-on-1 Minecraft coaching to help you improve your skills, builds, PvP, survival and more.">
+  <title>Minecraft 1-on-1 Coaching</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #f4f7f1;
-      background: #101810;
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    .nav {
-      position: sticky; top: 0; z-index: 10;
-      background: rgba(10,15,10,.94);
-      border-bottom: 1px solid #30432d;
-      backdrop-filter: blur(8px);
-    }
-    .nav-inner {
-      max-width: 1100px; margin: auto; padding: 16px 22px;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .logo { font-size: 1.35rem; font-weight: 900; }
-    .logo span { color: #63d34e; }
-    .nav-links { display: flex; gap: 20px; font-weight: 700; }
-    .nav-links a:hover { color: #63d34e; }
-    .hero {
-      min-height: 78vh; display: grid; place-items: center; text-align: center;
-      padding: 90px 20px;
-      background:
-        linear-gradient(rgba(8,15,8,.72), rgba(8,15,8,.92)),
-        radial-gradient(circle at 50% 20%, #315c2d 0, #172317 35%, #101810 70%);
-    }
-    .hero-box { max-width: 850px; }
-    .badge {
-      display: inline-block; padding: 7px 13px; border: 1px solid #46783d;
-      border-radius: 999px; color: #8be77b; background: #193019; font-weight: 800;
-      margin-bottom: 18px;
-    }
-    h1 { font-size: clamp(2.6rem, 7vw, 5.3rem); line-height: 1; margin-bottom: 20px; }
-    .hero p { max-width: 680px; margin: 0 auto 30px; color: #c7d0c3; font-size: 1.15rem; }
-    .buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn {
-      display: inline-block; padding: 14px 22px; border-radius: 10px; font-weight: 900;
-      border: 2px solid #63d34e; background: #63d34e; color: #081008;
-      cursor: pointer;
-    }
-    .btn:hover { transform: translateY(-2px); filter: brightness(1.08); }
-    .btn.secondary { background: transparent; color: #f4f7f1; border-color: #52624e; }
-    section { max-width: 1100px; margin: auto; padding: 75px 22px; }
-    .section-title { text-align: center; margin-bottom: 40px; }
-    .section-title h2 { font-size: 2.2rem; margin-bottom: 8px; }
-    .section-title p { color: #aeb8aa; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card {
-      background: #182119; border: 1px solid #334331; border-radius: 16px; padding: 25px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.15);
-    }
-    .card h3 { margin: 10px 0 8px; }
-    .card p { color: #b9c4b5; }
-    .icon { font-size: 2rem; }
-    .price { font-size: 2.5rem; font-weight: 900; color: #8be77b; margin: 10px 0; }
-    .price small { font-size: .95rem; color: #aeb8aa; font-weight: 500; }
-    ul { list-style: none; margin: 18px 0; }
-    li { margin: 9px 0; color: #d4ddd1; }
-    li::before { content: "✓"; color: #63d34e; font-weight: 900; margin-right: 8px; }
-    .featured { border-color: #63d34e; transform: translateY(-6px); }
-    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-items: center; }
-    .coach-box {
-      min-height: 300px; border-radius: 20px; display: grid; place-items: center;
-      background: linear-gradient(135deg, #284a24, #111a11);
-      border: 1px solid #45643f; font-size: 5rem;
-    }
-    .booking {
-      background: #172218; border: 1px solid #334a31; border-radius: 20px; padding: 30px;
-      max-width: 750px; margin: auto;
-    }
-    form { display: grid; gap: 14px; }
-    label { font-weight: 700; }
-    input, select, textarea {
-      width: 100%; padding: 13px; margin-top: 6px; border-radius: 9px;
-      border: 1px solid #465845; background: #0f160f; color: white; font: inherit;
-    }
-    textarea { min-height: 120px; resize: vertical; }
-    .notice { margin-top: 12px; color: #8be77b; font-weight: 700; }
-    .faq { max-width: 800px; margin: auto; }
-    details { background: #182119; border: 1px solid #334331; border-radius: 12px; padding: 17px 20px; margin: 10px 0; }
-    summary { cursor: pointer; font-weight: 800; }
-    footer { border-top: 1px solid #30432d; padding: 30px 22px; text-align: center; color: #9eaa9b; }
-    @media (max-width: 800px) {
-      .grid, .about { grid-template-columns: 1fr; }
-      .featured { transform: none; }
-      .nav-links { display: none; }
-    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,sans-serif;background:#111;color:#eee;line-height:1.6}
+    header{background:#173d20;padding:60px 20px;text-align:center;border-bottom:4px solid #55a630}
+    header h1{margin:0 0 10px;font-size:42px}
+    header p{max-width:650px;margin:0 auto 25px;color:#d7ead7}
+    .button,button{display:inline-block;padding:13px 22px;background:#55a630;color:#fff;text-decoration:none;border:0;border-radius:6px;font-weight:bold;cursor:pointer}
+    section{max-width:1000px;margin:auto;padding:45px 20px}
+    h2{text-align:center;margin-top:0}
+    .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+    .card{background:#1d1d1d;border:1px solid #333;border-radius:8px;padding:25px}
+    .card h3{color:#7dcc5a;margin-top:0}
+    .price{font-size:25px;font-weight:bold}
+    form{max-width:650px;margin:auto;background:#1d1d1d;padding:25px;border-radius:8px}
+    label{display:block;margin-top:15px;font-weight:bold}
+    input,select,textarea{width:100%;margin-top:6px;padding:12px;border-radius:5px;border:1px solid #444;background:#101010;color:#fff;font:inherit}
+    textarea{min-height:120px;resize:vertical}
+    button{width:100%;margin-top:20px;font-size:16px}
+    footer{text-align:center;padding:25px;background:#0b0b0b;color:#aaa}
   </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a class="logo" href="#">⛏️ Block<span>Coach</span></a>
-    <div class="nav-links">
-      <a href="#coaching">Coaching</a>
-      <a href="#about">About</a>
-      <a href="#booking">Book</a>
-      <a href="#faq">FAQ</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="hero-box">
-    <div class="badge">🎮 1-on-1 Minecraft Coaching</div>
-    <h1>Get Better at Minecraft.</h1>
-    <p>Personal coaching built around your goals. Improve your PvP, survival skills, building, movement, strategy, or whatever you want to master.</p>
-    <div class="buttons">
-      <a class="btn" href="#booking">Book a Session</a>
-      <a class="btn secondary" href="#coaching">See Coaching Plans</a>
-    </div>
-  </div>
+<header>
+  <h1>Minecraft 1-on-1 Coaching</h1>
+  <p>Improve your Minecraft skills with personalized one-on-one coaching.</p>
+  <a class="button" href="#booking">Book a Session</a>
 </header>
 
-<section id="coaching">
-  <div class="section-title">
-    <h2>Choose Your Coaching</h2>
-    <p>Simple 1-on-1 sessions focused on what you want to learn.</p>
-  </div>
-  <div class="grid">
+<section>
+  <h2>Coaching Options</h2>
+  <div class="plans">
     <div class="card">
-      <div class="icon">⚔️</div>
       <h3>PvP Training</h3>
-      <p>Work on aim, movement, combos, timing, game sense, and PvP strategy.</p>
-      <div class="price">$15 <small>/ session</small></div>
-      <ul><li>1-on-1 training</li><li>Personal feedback</li><li>Practice drills</li></ul>
-      <a class="btn" href="#booking">Book</a>
-    </div>
-    <div class="card featured">
-      <div class="icon">🏆</div>
-      <h3>Complete Coaching</h3>
-      <p>A custom session covering the Minecraft skills you want to improve most.</p>
-      <div class="price">$25 <small>/ session</small></div>
-      <ul><li>Custom lesson plan</li><li>Live coaching</li><li>Progress tips</li></ul>
-      <a class="btn" href="#booking">Book</a>
+      <p>Combat, movement, aim, strategy, and PvP fundamentals.</p>
+      <div class="price">$15 / session</div>
     </div>
     <div class="card">
-      <div class="icon">🏠</div>
+      <h3>Complete Coaching</h3>
+      <p>Personalized coaching based on the Minecraft skills you want to improve.</p>
+      <div class="price">$25 / session</div>
+    </div>
+    <div class="card">
       <h3>Building & Survival</h3>
-      <p>Learn better building techniques, resource planning, farms, exploration, and survival strategy.</p>
-      <div class="price">$15 <small>/ session</small></div>
-      <ul><li>Build feedback</li><li>Survival strategies</li><li>Step-by-step help</li></ul>
-      <a class="btn" href="#booking">Book</a>
+      <p>Improve building, survival strategies, resource gathering, and gameplay.</p>
+      <div class="price">$15 / session</div>
     </div>
   </div>
 </section>
 
-<section id="about">
-  <div class="about">
-    <div class="coach-box">🧑‍💻⛏️</div>
-    <div>
-      <div class="section-title" style="text-align:left;margin-bottom:18px">
-        <h2>Meet Your Coach</h2>
-      </div>
-      <p style="color:#c3ccc0">
-        Hey! I'm your Minecraft coach. My goal is to make every session useful, relaxed, and focused on the skills you actually want to improve.
-      </p>
-      <br>
-      <p style="color:#c3ccc0">
-        Whether you're learning PvP, trying to improve your builds, or just want someone to teach you better Minecraft strategies, we'll work together one-on-one.
-      </p>
-    </div>
-  </div>
-</section>
+<section>
+  <h2>Book a Coaching Session</h2>
 
-<section id="booking">
-  <div class="section-title">
-    <h2>Book a Coaching Session</h2>
-    <p>Choose your preferred date and time, tell me what you want to improve, and send your request.</p>
-  </div>
-  <div class="booking">
-    <form id="bookingForm">
-      <input type="hidden" name="access_key" value="e8084cad-514f-4dfd-9de4-f4d02d1206eb">
-      <input type="hidden" name="subject" value="NEW MINECRAFT COACHING REQUEST">
-      <input type="hidden" name="from_name" value="Minecraft Coaching Website">
-      <input type="checkbox" name="botcheck" style="display:none">
+  <!-- Web3Forms: direct POST, no JavaScript required -->
+  <form action="https://api.web3forms.com/submit" method="POST">
 
-      <label>Full Name
-        <input name="Customer Name" type="text" required placeholder="Your name">
-      </label>
+    <input type="hidden" name="access_key" value="e8084cad-514f-4dfd-9de4-f4d02d1206eb">
+    <input type="hidden" name="subject" value="New Minecraft Coaching Request">
+    <input type="hidden" name="from_name" value="Minecraft Coaching Website">
+    <input type="hidden" name="redirect" value="https://web3forms.com/success">
 
-      <label>Minecraft Username
-        <input name="Minecraft Username" type="text" required placeholder="Your Minecraft username">
-      </label>
+    <!-- Honeypot spam protection -->
+    <input type="checkbox" name="botcheck" style="display:none">
 
-      <label>Email Address
-        <input name="Customer Email" type="email" required placeholder="you@example.com">
-      </label>
+    <label for="name">Full Name</label>
+    <input id="name" name="name" type="text" required>
 
-      <label>Coaching Type
-        <select name="Coaching Type" required>
-          <option value="PvP Training">⚔️ PvP Training — $15</option>
-          <option value="Complete Coaching">🏆 Complete Coaching — $25</option>
-          <option value="Building & Survival">🏠 Building & Survival — $15</option>
-        </select>
-      </label>
+    <label for="minecraft">Minecraft Username</label>
+    <input id="minecraft" name="minecraft_username" type="text" required>
 
-      <label>Preferred Date
-        <input name="Preferred Date" type="date" required>
-      </label>
+    <label for="email">Email Address</label>
+    <input id="email" name="email" type="email" required>
 
-      <label>Preferred Time
-        <input name="Preferred Time" type="time" required>
-      </label>
+    <label for="coaching">Coaching Type</label>
+    <select id="coaching" name="coaching_type" required>
+      <option value="">Choose one</option>
+      <option>PvP Training - $15</option>
+      <option>Complete Coaching - $25</option>
+      <option>Building & Survival - $15</option>
+    </select>
 
-      <label>What do you want to improve?
-        <textarea name="Goals / What They Want To Improve" required placeholder="Tell me what you want help with..."></textarea>
-      </label>
+    <label for="date">Preferred Date</label>
+    <input id="date" name="preferred_date" type="date" required>
 
-      <label>Anything else I should know?
-        <textarea name="Additional Information" placeholder="Optional"></textarea>
-      </label>
+    <label for="time">Preferred Time</label>
+    <input id="time" name="preferred_time" type="time" required>
 
-      <button class="btn" type="submit">Send Coaching Request</button>
-      <div id="bookingNotice" class="notice" role="status" aria-live="polite"></div>
-    </form>
-  </div>
-</section>
+    <label for="goals">What do you want to improve?</label>
+    <textarea id="goals" name="goals" required></textarea>
 
-<section id="faq">
-  <div class="section-title">
-    <h2>FAQ</h2>
-  </div>
-  <div class="faq">
-    <details>
-      <summary>What version of Minecraft do you coach?</summary>
-      <p style="margin-top:10px;color:#b9c4b5">Add the versions you support here, such as Java Edition, Bedrock Edition, or both.</p>
-    </details>
-    <details>
-      <summary>How long is a session?</summary>
-      <p style="margin-top:10px;color:#b9c4b5">Sessions can be customized. Add your preferred session length and scheduling details here.</p>
-    </details>
-    <details>
-      <summary>How do I pay?</summary>
-      <p style="margin-top:10px;color:#b9c4b5">Add your payment method here. The demo form does not process payments yet.</p>
-    </details>
-    <details>
-      <summary>Can I request a specific coaching topic?</summary>
-      <p style="margin-top:10px;color:#b9c4b5">Yes. Tell the coach what you want to improve when booking and your session can be customized around it.</p>
-    </details>
-  </div>
+    <label for="notes">Anything else I should know?</label>
+    <textarea id="notes" name="notes"></textarea>
+
+    <button type="submit">Send Coaching Request</button>
+  </form>
 </section>
 
 <footer>
-  <p>© 2026 BlockCoach. Minecraft coaching website template.</p>
-  <p style="margin-top:6px;font-size:.9rem">Minecraft is a trademark of Mojang Studios. This website is not affiliated with Mojang or Microsoft.</p>
+  Minecraft 1-on-1 Coaching
 </footer>
 
 <script>
-  const dateField = document.querySelector('input[name="Preferred Date"]');
-  if (dateField) {
-    const today = new Date();
-    const localDate = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
-      .toISOString().split("T")[0];
-    dateField.min = localDate;
-  }
-
-  const bookingForm = document.getElementById("bookingForm");
-  const bookingNotice = document.getElementById("bookingNotice");
-  const submitButton = bookingForm.querySelector('button[type="submit"]');
-
-  bookingForm.addEventListener("submit", async function(e) {
-    e.preventDefault();
-
-    bookingNotice.textContent = "Sending your coaching request...";
-    bookingNotice.style.color = "#8be77b";
-    submitButton.disabled = true;
-    submitButton.style.opacity = "0.7";
-
-    const formData = new FormData(bookingForm);
-    formData.append("replyto", formData.get("Customer Email"));
-    formData.append("message",
-      "Customer Name: " + formData.get("Customer Name") + "\n" +
-      "Minecraft Username: " + formData.get("Minecraft Username") + "\n" +
-      "Customer Email: " + formData.get("Customer Email") + "\n" +
-      "Coaching Type: " + formData.get("Coaching Type") + "\n" +
-      "Preferred Date: " + formData.get("Preferred Date") + "\n" +
-      "Preferred Time: " + formData.get("Preferred Time") + "\n" +
-      "Goals / What They Want To Improve: " + formData.get("Goals / What They Want To Improve") + "\n" +
-      "Additional Information: " + (formData.get("Additional Information") || "None")
-    );
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        bookingForm.reset();
-        if (dateField) {
-          const today = new Date();
-          const localDate = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
-            .toISOString().split("T")[0];
-          dateField.min = localDate;
-        }
-        bookingNotice.textContent = "✓ Booking request sent! I'll get back to you by email.";
-      } else {
-        throw new Error(result.message || "The email service returned an error.");
-      }
-    } catch (error) {
-      bookingNotice.style.color = "#ff9b9b";
-      bookingNotice.textContent =
-        "We couldn't send the request right now. Please try again in a moment.";
-      console.error("Booking submission error:", error);
-    } finally {
-      submitButton.disabled = false;
-      submitButton.style.opacity = "1";
-    }
-  });
+  document.getElementById("date").min = new Date().toISOString().split("T")[0];
 </script>
 
 </body>
