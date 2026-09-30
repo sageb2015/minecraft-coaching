@@ -1,113 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minecraft 1-on-1 Coaching</title>
-  <style>
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,sans-serif;background:#111;color:#eee;line-height:1.6}
-    header{background:#173d20;padding:60px 20px;text-align:center;border-bottom:4px solid #55a630}
-    header h1{margin:0 0 10px;font-size:42px}
-    header p{max-width:650px;margin:0 auto 25px;color:#d7ead7}
-    .button,button{display:inline-block;padding:13px 22px;background:#55a630;color:#fff;text-decoration:none;border:0;border-radius:6px;font-weight:bold;cursor:pointer}
-    section{max-width:1000px;margin:auto;padding:45px 20px}
-    h2{text-align:center;margin-top:0}
-    .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-    .card{background:#1d1d1d;border:1px solid #333;border-radius:8px;padding:25px}
-    .card h3{color:#7dcc5a;margin-top:0}
-    .price{font-size:25px;font-weight:bold}
-    form{max-width:650px;margin:auto;background:#1d1d1d;padding:25px;border-radius:8px}
-    label{display:block;margin-top:15px;font-weight:bold}
-    input,select,textarea{width:100%;margin-top:6px;padding:12px;border-radius:5px;border:1px solid #444;background:#101010;color:#fff;font:inherit}
-    textarea{min-height:120px;resize:vertical}
-    button{width:100%;margin-top:20px;font-size:16px}
-    footer{text-align:center;padding:25px;background:#0b0b0b;color:#aaa}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BlockCoaching offers personalized 1-on-1 Minecraft coaching for PvP, building, survival, and general gameplay.">
+<title>BlockCoaching | Minecraft 1-on-1 Coaching</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#111;color:#eee;line-height:1.6}
+header{background:#173d20;padding:60px 20px;text-align:center;border-bottom:4px solid #55a630}header h1{margin:0 0 10px;font-size:42px}header p{max-width:650px;margin:0 auto 25px;color:#d7ead7}
+.button,button{display:inline-block;padding:13px 22px;background:#55a630;color:#fff;text-decoration:none;border:0;border-radius:6px;font-weight:bold;cursor:pointer}
+section{max-width:1000px;margin:auto;padding:45px 20px}h2{text-align:center;margin-top:0}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}.card{background:#1d1d1d;border:1px solid #333;border-radius:8px;padding:25px}.card h3{color:#7dcc5a;margin-top:0}.price{font-size:25px;font-weight:bold}
+form{max-width:650px;margin:auto;background:#1d1d1d;padding:25px;border-radius:8px}label{display:block;margin-top:15px;font-weight:bold}
+input,select,textarea{width:100%;margin-top:6px;padding:12px;border-radius:5px;border:1px solid #444;background:#101010;color:#fff;font:inherit}textarea{min-height:120px;resize:vertical}button{width:100%;margin-top:20px;font-size:16px}
+footer{text-align:center;padding:25px;background:#0b0b0b;color:#aaa}
+</style>
 </head>
 <body>
-
 <header>
-  <h1>Minecraft 1-on-1 Coaching</h1>
-  <p>Improve your Minecraft skills with personalized one-on-one coaching.</p>
-  <a class="button" href="#booking">Book a Session</a>
+<h1>BlockCoaching</h1>
+<p>Personalized 1-on-1 Minecraft coaching to help you improve your skills and become a better player.</p>
+<a class="button" href="#booking">Book a Session</a>
 </header>
 
 <section>
-  <h2>Coaching Options</h2>
-  <div class="plans">
-    <div class="card">
-      <h3>PvP Training</h3>
-      <p>Combat, movement, aim, strategy, and PvP fundamentals.</p>
-      <div class="price">$15 / session</div>
-    </div>
-    <div class="card">
-      <h3>Complete Coaching</h3>
-      <p>Personalized coaching based on the Minecraft skills you want to improve.</p>
-      <div class="price">$25 / session</div>
-    </div>
-    <div class="card">
-      <h3>Building & Survival</h3>
-      <p>Improve building, survival strategies, resource gathering, and gameplay.</p>
-      <div class="price">$15 / session</div>
-    </div>
-  </div>
+<h2>Coaching Options</h2>
+<div class="plans">
+<div class="card"><h3>PvP Training</h3><p>Improve combat, movement, aim, strategy, and PvP fundamentals.</p><div class="price">$15 / session</div></div>
+<div class="card"><h3>Complete Coaching</h3><p>Personalized Minecraft coaching based on the skills you want to improve.</p><div class="price">$25 / session</div></div>
+<div class="card"><h3>Building & Survival</h3><p>Improve building, survival strategies, resource gathering, and gameplay.</p><div class="price">$15 / session</div></div>
+</div>
 </section>
 
 <section>
-  <h2>Book a Coaching Session</h2>
-
-  <!-- Web3Forms: direct POST, no JavaScript required -->
-  <form action="https://api.web3forms.com/submit" method="POST">
-
-    <input type="hidden" name="access_key" value="e8084cad-514f-4dfd-9de4-f4d02d1206eb">
-    <input type="hidden" name="subject" value="New Minecraft Coaching Request">
-    <input type="hidden" name="from_name" value="Minecraft Coaching Website">
-    <input type="hidden" name="redirect" value="https://web3forms.com/success">
-
-    <!-- Honeypot spam protection -->
-    <input type="checkbox" name="botcheck" style="display:none">
-
-    <label for="name">Full Name</label>
-    <input id="name" name="name" type="text" required>
-
-    <label for="minecraft">Minecraft Username</label>
-    <input id="minecraft" name="minecraft_username" type="text" required>
-
-    <label for="email">Email Address</label>
-    <input id="email" name="email" type="email" required>
-
-    <label for="coaching">Coaching Type</label>
-    <select id="coaching" name="coaching_type" required>
-      <option value="">Choose one</option>
-      <option>PvP Training - $15</option>
-      <option>Complete Coaching - $25</option>
-      <option>Building & Survival - $15</option>
-    </select>
-
-    <label for="date">Preferred Date</label>
-    <input id="date" name="preferred_date" type="date" required>
-
-    <label for="time">Preferred Time</label>
-    <input id="time" name="preferred_time" type="time" required>
-
-    <label for="goals">What do you want to improve?</label>
-    <textarea id="goals" name="goals" required></textarea>
-
-    <label for="notes">Anything else I should know?</label>
-    <textarea id="notes" name="notes"></textarea>
-
-    <button type="submit">Send Coaching Request</button>
-  </form>
+<h2>About BlockCoaching</h2>
+<p style="text-align:center;max-width:700px;margin:auto">BlockCoaching is focused on personalized Minecraft coaching. Tell us what you want to improve and your session can be focused around your goals.</p>
 </section>
 
-<footer>
-  Minecraft 1-on-1 Coaching
-</footer>
+<section id="booking">
+<h2>Book a Coaching Session</h2>
+<form action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="e8084cad-514f-4dfd-9de4-f4d02d1206eb">
+<input type="hidden" name="subject" value="New BlockCoaching Request">
+<input type="hidden" name="from_name" value="BlockCoaching Website">
+<input type="hidden" name="redirect" value="https://web3forms.com/success">
+<input type="checkbox" name="botcheck" style="display:none">
 
-<script>
-  document.getElementById("date").min = new Date().toISOString().split("T")[0];
-</script>
+<label for="name">Full Name</label><input id="name" name="name" type="text" required>
+<label for="minecraft">Minecraft Username</label><input id="minecraft" name="minecraft_username" type="text" required>
+<label for="email">Email Address</label><input id="email" name="email" type="email" required>
+<label for="coaching">Coaching Type</label>
+<select id="coaching" name="coaching_type" required>
+<option value="">Choose one</option><option>PvP Training - $15</option><option>Complete Coaching - $25</option><option>Building & Survival - $15</option>
+</select>
+<label for="date">Preferred Date</label><input id="date" name="preferred_date" type="date" required>
+<label for="time">Preferred Time</label><input id="time" name="preferred_time" type="time" required>
+<label for="goals">What do you want to improve?</label><textarea id="goals" name="goals" required></textarea>
+<label for="notes">Anything else I should know?</label><textarea id="notes" name="notes"></textarea>
+<button type="submit">Send Coaching Request</button>
+</form>
+</section>
 
+<footer>© BlockCoaching — Minecraft 1-on-1 Coaching</footer>
+<script>document.getElementById("date").min=new Date().toISOString().split("T")[0];</script>
 </body>
 </html>

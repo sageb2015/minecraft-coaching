@@ -1,14 +1,10 @@
-Minecraft Coaching Website - Email Fixed
-
-This version uses Web3Forms' direct HTML POST method.
-No JavaScript fetch is used for the email submission.
-
-Web3Forms endpoint:
-https://api.web3forms.com/submit
+BlockCoaching Website
+=====================
+For GitHub + Render + Web3Forms.
 
 Render:
-Root Directory: minecraft_coaching_website
+Root Directory: blockcoaching_website
 Build Command: blank
 Publish Directory: ./
 
-Replace your existing index.html with the one in this ZIP.
+The Web3Forms access key is already included in index.html.
