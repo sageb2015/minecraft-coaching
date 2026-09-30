@@ -1,23 +1,15 @@
-# BlockCoach Minecraft Coaching Website
+# BlockCoach Minecraft Coaching Website — Web3Forms Email
 
-Updated booking form:
-- Customer name
-- Minecraft username
-- Customer email
-- Coaching type and price
-- Preferred date
-- Preferred time
-- Coaching goals
-- Additional information
+This version uses Web3Forms for the booking form. Customers stay on the website after submitting.
 
-Booking requests are sent to:
-enderslayer9900@gmail.com
+Booking requests are delivered to the email address associated with the Web3Forms access key.
 
-Deployment:
-- GitHub repository: minecraft-coaching
-- If index.html is inside `minecraft_coaching_website`, keep Render Root Directory:
-  minecraft_coaching_website
+Render settings:
+- Root Directory: minecraft_coaching_website
 - Build Command: blank
 - Publish Directory: ./
 
-Note: This is a request-based booking form. It does not automatically reserve a time slot or prevent two people from choosing the same time. A scheduling service is needed for true real-time availability.
+GitHub update:
+Replace the existing `index.html` inside `minecraft_coaching_website` with this version, commit the change, and let Render redeploy.
+
+The Web3Forms access key is intentionally included in the client-side form because Web3Forms is designed for static websites.

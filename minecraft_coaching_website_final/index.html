@@ -182,11 +182,11 @@
     <p>Choose your preferred date and time, tell me what you want to improve, and send your request.</p>
   </div>
   <div class="booking">
-    <form id="bookingForm" action="https://formsubmit.co/enderslayer9900@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="NEW MINECRAFT COACHING REQUEST">
-      <input type="hidden" name="_captcha" value="true">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://minecraft-coaching.onrender.com/">
+    <form id="bookingForm">
+      <input type="hidden" name="access_key" value="e8084cad-514f-4dfd-9de4-f4d02d1206eb">
+      <input type="hidden" name="subject" value="NEW MINECRAFT COACHING REQUEST">
+      <input type="hidden" name="from_name" value="Minecraft Coaching Website">
+      <input type="checkbox" name="botcheck" style="display:none">
 
       <label>Full Name
         <input name="Customer Name" type="text" required placeholder="Your name">
@@ -268,9 +268,60 @@
     dateField.min = localDate;
   }
 
-  document.getElementById("bookingForm").addEventListener("submit", function() {
-    const notice = document.getElementById("bookingNotice");
-    notice.textContent = "Sending your coaching request...";
+  const bookingForm = document.getElementById("bookingForm");
+  const bookingNotice = document.getElementById("bookingNotice");
+  const submitButton = bookingForm.querySelector('button[type="submit"]');
+
+  bookingForm.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    bookingNotice.textContent = "Sending your coaching request...";
+    bookingNotice.style.color = "#8be77b";
+    submitButton.disabled = true;
+    submitButton.style.opacity = "0.7";
+
+    const formData = new FormData(bookingForm);
+    formData.append("replyto", formData.get("Customer Email"));
+    formData.append("message",
+      "Customer Name: " + formData.get("Customer Name") + "\n" +
+      "Minecraft Username: " + formData.get("Minecraft Username") + "\n" +
+      "Customer Email: " + formData.get("Customer Email") + "\n" +
+      "Coaching Type: " + formData.get("Coaching Type") + "\n" +
+      "Preferred Date: " + formData.get("Preferred Date") + "\n" +
+      "Preferred Time: " + formData.get("Preferred Time") + "\n" +
+      "Goals / What They Want To Improve: " + formData.get("Goals / What They Want To Improve") + "\n" +
+      "Additional Information: " + (formData.get("Additional Information") || "None")
+    );
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        bookingForm.reset();
+        if (dateField) {
+          const today = new Date();
+          const localDate = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
+            .toISOString().split("T")[0];
+          dateField.min = localDate;
+        }
+        bookingNotice.textContent = "✓ Booking request sent! I'll get back to you by email.";
+      } else {
+        throw new Error(result.message || "The email service returned an error.");
+      }
+    } catch (error) {
+      bookingNotice.style.color = "#ff9b9b";
+      bookingNotice.textContent =
+        "We couldn't send the request right now. Please try again in a moment.";
+      console.error("Booking submission error:", error);
+    } finally {
+      submitButton.disabled = false;
+      submitButton.style.opacity = "1";
+    }
   });
 </script>
 
